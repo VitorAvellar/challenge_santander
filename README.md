@@ -1,6 +1,13 @@
 # challenge_santander
+**Passo 1: Instalar Todas as Bibliotecas (Dependências)**
+<br>
+Com o terminal aberto na pasta correta, copie e cole o comando abaixo e pressione Enter. Ele vai instalar de uma só vez tudo o que é necessário para a aplicação rodar.
+Este projeto é uma solução para o Santander Challenge, focada em analisar e classificar empresas (PJ) com base em seu momento de vida e em suas relações financeiras na rede de transações:
 
-Este projeto é uma solução para o Santander Challenge, focada em analisar e classificar empresas (PJ) com base em seu momento de vida e em suas relações financeiras na rede de transações.
+**pip install pandas scikit-learn networkx streamlit plotly tqdm**
+
+
+
 
 A solução consiste em duas partes principais:
 
