@@ -1,39 +1,31 @@
-2025-09-21 20:26:18,303 - INFO - ======================================================
-2025-09-21 20:26:18,303 - INFO - === INICIANDO SCRIPT DE ANÁLISE (MODO HISTÓRICO) ===
-2025-09-21 20:26:18,303 - INFO - ======================================================
-2025-09-21 20:26:18,303 - INFO - [PASSO 1/5] Iniciando: Carregamento e Preparação dos Dados.
-2025-09-21 20:26:18,602 - INFO - Arquivos carregados. Base ID: 50000 linhas. Base Transações: 100000 linhas.
-2025-09-21 20:26:18,618 - INFO - Modo de análise: Todos os registros históricos por empresa serão mantidos e analisados.
-2025-09-21 20:26:18,618 - INFO - Iniciando Feature Engineering...
-2025-09-21 20:26:18,702 - INFO - Coluna 'IDADE_EMPRESA' criada para cada snapshot de tempo.
-2025-09-21 20:26:18,702 - INFO - Agregando dados de transações (pagamentos e recebimentos)...
-2025-09-21 20:26:18,824 - INFO - PASSO 1 concluído em 0.52 segundos.
-2025-09-21 20:26:18,824 - INFO - 
+2025-09-28 20:29:09,959 - INFO - ======================================================
+2025-09-28 20:29:09,960 - INFO - === INICIANDO SCRIPT DE ANÁLISE (MODO HISTÓRICO) ===
+2025-09-28 20:29:09,960 - INFO - ======================================================
+2025-09-28 20:29:09,961 - INFO - [PASSO 1/5] Iniciando: Carregamento, Limpeza e Preparação dos Dados.
+2025-09-28 20:29:10,353 - INFO - Arquivos carregados. Base ID: 50000 linhas. Base Transações: 100000 linhas.
+2025-09-28 20:29:10,354 - INFO - Realizando limpeza dos IDs (removendo espaços e padronizando para maiúsculas)...
+2025-09-28 20:29:10,834 - INFO - Limpeza concluída. Número de IDs únicos agora é: 10000
+2025-09-28 20:29:10,835 - INFO - Iniciando Feature Engineering...
+2025-09-28 20:29:10,962 - INFO - Coluna 'IDADE_EMPRESA' criada para cada snapshot de tempo.
+2025-09-28 20:29:10,963 - INFO - Agregando dados de transações...
+2025-09-28 20:29:11,510 - INFO - PASSO 1 concluído em 1.55 segundos.
+2025-09-28 20:29:11,511 - INFO - 
 [PASSO 2/5] Iniciando: Classificação de Momento de Vida para cada registro.
-2025-09-21 20:26:18,824 - INFO - Features selecionadas para clusterização: ['VL_FATU', 'VL_SLDO', 'IDADE_EMPRESA', 'VL_PAGAMENTOS', 'VL_RECEBIMENTOS']
-2025-09-21 20:26:18,863 - INFO - Dados normalizados com StandardScaler.
-2025-09-21 20:26:22,045 - INFO - Modelo K-Means treinado com k=4.
-2025-09-21 20:26:22,071 - INFO - Médias dos clusters para interpretação:
-              VL_FATU       VL_SLDO  IDADE_EMPRESA  VL_PAGAMENTOS  VL_RECEBIMENTOS
-CLUSTER                                                                           
-1        2.797930e+06 -1.681044e+04       6.023948   2.076185e+05     1.680073e+05
-3        1.104954e+07  3.009226e+04       7.939265   1.183548e+07     1.293070e+07
-0        6.209729e+07  2.287268e+06      21.167012   1.899479e+05     1.748224e+05
-2        1.385751e+08 -8.805686e+06      20.798349   2.403964e+05     2.420608e+05
-2025-09-21 20:26:22,081 - INFO - PASSO 2 concluído em 3.26 segundos.
-2025-09-21 20:26:22,081 - INFO - 
-[PASSO 3/5] Iniciando: Análise da Rede de Transações (Versão Otimizada).
-2025-09-21 20:26:22,862 - INFO - PASSO 3 concluído em 0.78 segundos.
-2025-09-21 20:26:22,862 - INFO - 
-[PASSO 4/5] Iniciando: Modelo de Projeção de Faturamento.
-2025-09-21 20:26:24,654 - INFO - Calculando projeções para 6088 empresas...
-2025-09-21 20:26:58,462 - INFO - PASSO 4 concluído em 35.60 segundos.
-2025-09-21 20:26:58,468 - INFO - 
+2025-09-28 20:29:16,494 - INFO - PASSO 2 concluído em 4.98 segundos.
+2025-09-28 20:29:16,498 - INFO - 
+[PASSO 3/5] Iniciando: Análise da Rede de Transações.
+2025-09-28 20:29:18,478 - INFO - Calculando nível de dependência máxima...
+2025-09-28 20:29:19,260 - INFO - PASSO 3 concluído em 2.76 segundos.
+2025-09-28 20:29:19,261 - INFO - 
+[PASSO 4/5] Iniciando: Modelo de Projeção de Recebimentos.
+2025-09-28 20:29:19,642 - INFO - Calculando projeções para 6088 empresas com histórico de recebimentos...
+2025-09-28 20:29:55,115 - INFO - PASSO 4 concluído em 35.85 segundos.
+2025-09-28 20:29:55,116 - INFO - 
 [PASSO 5/5] Iniciando: Salvamento dos Arquivos Finais.
-2025-09-21 20:26:59,600 - INFO - Arquivo 'empresas_analisadas.csv' salvo com sucesso.
-2025-09-21 20:27:00,400 - INFO - PASSO 5 concluído em 1.93 segundos.
-2025-09-21 20:27:00,400 - INFO - 
+2025-09-28 20:29:56,801 - INFO - Arquivo 'empresas_analisadas.csv' salvo com sucesso.
+2025-09-28 20:29:58,530 - INFO - PASSO 5 concluído em 3.41 segundos.
+2025-09-28 20:29:58,531 - INFO - 
 =======================================================
-2025-09-21 20:27:00,400 - INFO - === ANÁLISE CONCLUÍDA COM SUCESSO ===
-2025-09-21 20:27:00,400 - INFO - === Tempo Total de Execução: 42.10 segundos ===
-2025-09-21 20:27:00,400 - INFO - =======================================================
+2025-09-28 20:29:58,532 - INFO - === ANÁLISE CONCLUÍDA COM SUCESSO ===
+2025-09-28 20:29:58,532 - INFO - === Tempo Total de Execução: 48.57 segundos ===
+2025-09-28 20:29:58,533 - INFO - =======================================================
